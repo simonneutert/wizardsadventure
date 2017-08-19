@@ -1,5 +1,3 @@
-require 'pry'
-
 $allowed_commands = ["look", "walk", "pickup", "inventory"]
 
 $location = "living-room"
@@ -13,15 +11,15 @@ $nodes["attic"] = "You are in the attic. There is a giant welding torch in the c
 $edges = {}
 
 $edges["living-room"] = [
-  ["garden", "west", "door"],
-  ["attic", "upstairs", "ladder"]
-]
+                          ["garden", "west", "door"],
+                          ["attic", "upstairs", "ladder"]
+                        ]
 $edges["garden"] = [
-  ["living-room", "east", "door"]
-]
+                    ["living-room", "east", "door"]
+                   ]
 $edges["attic"] = [
-  ["living-room", "downstairs", "ladder"]
-]
+                  ["living-room", "downstairs", "ladder"]
+                  ]
 
 $objects = ["whiskey", "bucket", "frog", "chain"]
 
@@ -110,6 +108,7 @@ def game_repl
   puts ""
   input = gets.chomp
   puts ""
+  # This is a desaster for security, I know ;)
   game_eval input
   puts ""
   game_repl
