@@ -47,7 +47,7 @@ def describe_objects_at(loc = $location)
     obj_at_loc << obj if $object_locations[obj] == loc
   end
   if obj_at_loc.empty?
-    puts "Nothinig"
+    puts "Nothing to pick up."
   else
     puts "Objects: #{obj_at_loc.join(', a ')}"
   end
